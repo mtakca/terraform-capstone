@@ -2,7 +2,7 @@
 
 > **Production-Ready, Modular, and Secure WordPress Infrastructure on AWS.**
 
-This project deploys a highly available, fault-tolerant, and secure WordPress environment using **Terraform**. It adheres to "Elite DevOps" standards, featuring Zero Trust IAM roles, AWS Secrets Manager integration for credential security, and a strictly modular architecture.
+This project deploys a highly available, fault-tolerant, and secure WordPress environment using **Terraform**. It adheres to "DevOps Architect" standards, featuring Zero Trust IAM roles, AWS Secrets Manager integration for credential security, and a strictly modular architecture.
 
 ---
 
@@ -65,7 +65,7 @@ graph TB
     *   RDS Primary + Read Replica architecture.
 *   **Standardization**: Enforced tagging strategy (`CostCenter`, `Owner`, `ManagedBy`) for FinOps.
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 .
