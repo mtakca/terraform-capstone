@@ -1,0 +1,39 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude sensitive variables
+*.tfvars
+*.auto.tfvars
+
+# Ignore override files as they are usually local overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore backup files
+*.backup
+
+# Mac OS
+.DS_Store
+
+# Utility / Cleanup Scripts
+cleanup_conflicts.sh
+fix_efs.sh
+nuke_project.sh
+remove_blockers.sh
+
+# Do NOT ignore install_wordpress.sh as it is part of the solution
+!install_wordpress.sh
