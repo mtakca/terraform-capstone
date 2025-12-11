@@ -12,34 +12,34 @@ The infrastructure implements a 3-Tier Architecture distributed across 2 Availab
 
 ```mermaid
 graph TB
-    subgraph Region[AWS Region: us-east-1]
+    subgraph Region["AWS Region: us-east-1"]
         style Region fill:#f9f9f9,stroke:#666,stroke-width:2px
         
-        subgraph VPC[VPC: 10.0.0.0/16]
+        subgraph VPC["VPC: 10.0.0.0/16"]
             style VPC fill:#ffffff,stroke:#232f3e,stroke-width:2px
             
             IGW[Internet Gateway]
             
-            subgraph Public_Layer[Public Layer]
+            subgraph Public_Layer["Public Layer"]
                 style Public_Layer fill:#e6f7ff,stroke:#1890ff,stroke-width:1px
                 ALB[Application Load Balancer]
                 NAT[NAT Gateways]
             end
             
-            subgraph App_Layer[App Layer (Private)]
+            subgraph App_Layer["App Layer (Private)"]
                 style App_Layer fill:#f6ffed,stroke:#52c41a,stroke-width:1px
-                ASG[Auto Scaling Group<br/>(Amazon Linux 2023)]
-                EFS[Amazon EFS<br/>(Shared /var/www/html)]
+                ASG["Auto Scaling Group<br/>(Amazon Linux 2023)"]
+                EFS["Amazon EFS<br/>(Shared /var/www/html)"]
             end
             
-            subgraph Data_Layer[Data Layer (Private)]
+            subgraph Data_Layer["Data Layer (Private)"]
                 style Data_Layer fill:#fff7e6,stroke:#fa8c16,stroke-width:1px
-                PrimaryDB[(RDS MySQL Primary)]
-                ReplicaDB[(RDS Read Replica)]
+                PrimaryDB[("RDS MySQL Primary")]
+                ReplicaDB[("RDS Read Replica")]
             end
         end
         
-        SecretsManager[AWS Secrets Manager<br/>(Auto-rotated Credentials)]
+        SecretsManager["AWS Secrets Manager<br/>(Auto-rotated Credentials)"]
         style SecretsManager fill:#ffe6e6,stroke:#f5222d,stroke-width:2px
     end
 
@@ -65,7 +65,7 @@ graph TB
     *   RDS Primary + Read Replica architecture.
 *   **Standardization**: Enforced tagging strategy (`CostCenter`, `Owner`, `ManagedBy`) for FinOps.
 
-##  Project Structure
+## 📂 Project Structure
 
 ```bash
 .
@@ -124,3 +124,4 @@ terraform destroy
 ```
 
 ---
+**Managed by:** DevOps Team | **Cost Center:** CC-101
